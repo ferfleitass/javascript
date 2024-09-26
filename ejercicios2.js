@@ -4,51 +4,50 @@
 // Instrucción: Escribe una función que reciba un número y verifique si es par o impar.
 // Imprime "El número es par" o "El número es impar" según corresponda.
 function verificarParidad(numero) {
-    var numero = prompt("Por favor, ingrese su numero:");
+    if (isNaN(numero)){
+        console.log("Ingrese un numero válido");
+        return;
+    }
     if (numero % 2 === 0){
         console.log(numero + "es un numero par");
     } else{
-        console.log(numero + "es un numero impar")
+        console.log(numero + "es un numero impar");
 
     }
 }
-verificarParidad();
+verificarParidad(4);
+verificarParidad(7);
 
 // Ejercicio 2: Condicionales anidados
 // Instrucción: Escribe una función que reciba una edad y determine si la persona es:
 // "Menor de edad" (menor a 18), "Adulto" (entre 18 y 65), o "Adulto mayor" (mayor a 65).
 function clasificarEdad(edad) {
-    var edad = prompt("Ingrese su edad:")
-    if (edad >= 18 && edad< 65){
-        console.log(edad + 'Adulto');
-
-    }else if(edad > 18){
-        console.log(edad + 'Adulto mayor');
-    } 
-    else{
-        console.log(edad + 'menor de edad');
+    if (isNaN(edad) || edad <0){
+        console.log("Ingrese una edad");
+        return;
+    }
+    if (edad < 18){
+        console.log(edad + "Menor de edad");
+    } else if (edad >= 18 && edad <= 65){
+        console.log(edad + "Adulto");
+    } else {
+        console.log(edad + "Adulto Mayor");
+    }
 }
-}
-clasificarEdad();
+clasificarEdad(18);
+clasificarEdad(17);
+clasificarEdad(66);
 // Ejercicio 3: Bucles while
 // Instrucción: Crea una función que reciba un número entero positivo y utilice un bucle `while` para imprimir todos los números desde ese número hasta 0.
 function cuentaRegresiva() {
-    let numero;
-
-    while (true) { 
-        numero = parseInt(prompt("Ingrese un número positivo:")); 
-
-       
-        if (!isNaN(numero) && numero >= 0) {
-            break; 
-        }
-
-        console.log("Por favor, ingrese un número positivo."); 
+    var numero = 5;
+    if (isNaN(numero) || numero <0){
+        console.log("Ingrese un numero positivo");
+        return;
     }
-
-    while (numero >= 0) {
+    while (numero >= 0){
         console.log(numero);
-        numero--; 
+        numero--;
     }
 }
 
