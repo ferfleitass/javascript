@@ -4,7 +4,7 @@
 function procesarPedido(pedido) {
     const nombre_cliente = pedido.shift();
 
-    pedido.shift("bebida");
+    pedido.unshift("bebida");
 
     pedido.push(nombre_cliente);
 
@@ -13,15 +13,17 @@ function procesarPedido(pedido) {
 
 const pedido1 = ["Fernando","lomito","gaseosa"];
 const entregar = procesarPedido (pedido1);
-console.log(entregar)
+console.log(entregar);
 
 // 2. Iteración de Arrays en Javascript
 // 2.1 Crea una función llamada `sumarPares` que reciba un array de números.
 // Debes iterar sobre el array, sumar todos los números pares y devolver la suma.
 function sumarPares(numeros) {
-    let suma = 0
-    if (numero % 2 === 0){
-        suma += numero;
+    let suma = 0;
+    for (let i = 0; i < numeros.length; i++){
+    if (numeros[i] % 2 === 0){
+        suma += numeros[i];
+    }
     }
     return suma;
 }
@@ -97,6 +99,9 @@ function findMinMaxPages(books) {
     for (let i = 1; i < books.length; i++){
         if (books[i] < books[menosIndex]){
             menosIndex = i;
+        }
+        if (books[i] > books[masIndex]){
+            masIndex = i;
         }
     }
     return [menosIndex,masIndex];
