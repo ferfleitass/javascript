@@ -179,21 +179,24 @@ function evaluarNumeros(a, b, c) {
     const todosPositivos = (a > 0 && b > 0 && c > 0);
     const alMenosUnoNegativo = (a < 0 || b < 0 || c < 0);
     const todosNegativos = (a < 0 && b < 0 && c < 0);
+    const hayCeros = (a === 0 || b === 0 || c === 0);
     
-    if (todosPositivos) {
+    if (hayCeros) {
+        return "Hay números cero.";
+    } else if (todosPositivos) {
         return "Todos son positivos.";
-    } else if (alMenosUnoNegativo) {
-        return "Al menos uno es negativo.";
     } else if (todosNegativos) {
         return "Todos son negativos.";
-    } else {
-        return "Hay números cero.";
-    }
+    } else if (alMenosUnoNegativo) {
+        return "Al menos uno es negativo.";
+    } 
 }
-console.log(evaluarNumeros(5, 3, 2)); 
-console.log(evaluarNumeros(-1, 3, 2)); 
-console.log(evaluarNumeros(-5, -3, -2)); 
-console.log(evaluarNumeros(0, 3, 2));  
+
+console.log(evaluarNumeros(5, 3, 2));   
+console.log(evaluarNumeros(-1, 3, 2));  
+console.log(evaluarNumeros(-5, -3, -2));
+console.log(evaluarNumeros(0, 3, 2));   
+ 
 // Exportar todas las funciones
 export {
     verificarParidad,
