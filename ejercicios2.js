@@ -71,8 +71,7 @@ repetirMensaje();
 
 // Ejercicio 5: Bucle for
 // Instrucción: Escribe una función que reciba un número entero positivo y utilice un bucle `for` para imprimir todos los números pares entre 0 y ese número.
-function imprimirPares(numero) {
-numero = parseInt(prompt("Ingrese un numero positivo"));    
+function imprimirPares(numero) {    
 if (isNaN(numero) || numero< 0){
     console.log("Ingrese un numero positivo");
 }else{
@@ -84,7 +83,8 @@ if (isNaN(numero) || numero< 0){
 
 }
 }
-imprimirPares();
+imprimirPares(6);
+imprimirPares(-2);
     
 
 // Ejercicio 6: Uso de break
@@ -113,10 +113,8 @@ saltarCinco();
 // Ejercicio 8: Switch básico
 // Instrucción: Escribe una función que reciba un número del 1 al 7 y devuelva el día de la semana correspondiente (1 es "Lunes", 2 es "Martes", ..., 7 es "Domingo"). Usa la estructura `switch`.
 function obtenerDiaSemana(dia) {
-    const numero = parseInt(prompt("Ingrese un numero"));
-
-        
-            switch(numero){
+    dia = Number(dia);
+            switch(dia){
                 case 1:
                     console.log("Lunes");
                     break;
@@ -146,15 +144,14 @@ function obtenerDiaSemana(dia) {
 
     
 }
-obtenerDiaSemana();
+obtenerDiaSemana("1");
+obtenerDiaSemana("2");
 
 // Ejercicio 9: Switch con múltiples casos
 // Instrucción: Escribe una función que reciba un carácter y devuelva si es una vocal. Utiliza un `switch` y agrupa los casos para las vocales (a, e, i, o, u).
 function esVocal(letra) {
-    const letras = prompt("Ingrese una letra");
-
         
-    switch(letras){
+    switch(letra){
         case "a":
             console.log("Vocal");
             break;
@@ -174,7 +171,7 @@ function esVocal(letra) {
     
     }   
 }
-esVocal();
+esVocal("a");
 
 // Ejercicio 10: Condicionales complejos con operadores lógicos
 // Instrucción: Escribe una función que reciba tres números y determine si todos son positivos, al menos uno es negativo, o todos son negativos. Usa operadores lógicos (`&&`, `||`).
