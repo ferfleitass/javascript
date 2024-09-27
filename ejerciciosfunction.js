@@ -3,7 +3,7 @@
 // 1. Tu primera función
 // 1.1 Escribe una función llamada `despedir` que imprima "Adiós" en la consola.
  function despedir(){
-        return "Adiós";
+        console.log("Adios");
     }   
 despedir();
 // 1.2 Crea una función llamada `multiplicarPorDos` que tome un número como parámetro y devuelva el doble de ese número.
@@ -95,8 +95,14 @@ function suma(n) {
 console.log(suma(3));
 // 5.2 Escribe una función que calcule la sucesión de Fibonacci de forma recursiva. La sucesión de Fibonacci es una serie de números que empieza por 0 y 1 y cada número es la suma de los dos anteriores. Por ejemplo: `fibonacci(6) -> 8`
 function fibonacci(n) {
-    
+    if (n === 0){
+     return 0;
+    } else if (n===1){
+     return 1;
+    }
+    return fibonacci(n-1) + fibonacci(n-2);
 }
+console.log(fibonacci(8));
 
 // 5.3 Crea una función recursiva llamada `factorial` que calcule el factorial de un número. El factorial de n (n!) es el producto de todos los números enteros positivos menores o iguales a n.
 function factorial(n) {
